@@ -2,6 +2,7 @@
 {
     private static void Main(string[] args)
     {
+
         int quociente;
         int numero;
         int[] vetor = new int[8];
