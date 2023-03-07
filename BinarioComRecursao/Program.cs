@@ -13,7 +13,7 @@ internal class Program
         Console.WriteLine("DIGITE UM NÚMERO: ");
         numero = int.Parse(Console.ReadLine());
 
-        while(numero < 0)
+        while(numero >= 256)
         {
             Console.WriteLine("DIGITE UM NÚMERO: ");
             numero = int.Parse(Console.ReadLine());
@@ -21,27 +21,14 @@ internal class Program
 
         Conversao(numero);
 
-        int[] Conversao(int quociente)
+        void Conversao(int quociente)
         {
-            if (quociente == 0)
-            {
-                return vetor;
-            }
-            else
-            {
-                if (quociente == 1)
-                {
-                    vetor[indice] = quociente;
-                    return vetor;
-                }
-                else
-                {
-                    vetor[indice] = quociente % 2;
-                    indice++;
-                    //quociente = quociente / 2;
-                    return Conversao(quociente / 2);
-                }
-            }
+           if (quociente > 0)
+           {
+              vetor[indice] = quociente % 2;
+              indice++;
+              Conversao(quociente / 2);
+           }   
         }
 
         
